@@ -2,8 +2,6 @@ package main
 
 import "fmt"
 
-// TODO: сделать сет потокобезопасным и с дженериками???
-
 func main() {
 	sequence := []string{"cat", "cat", "dog", "cat", "tree", "bool"}
 	// set - сет строк

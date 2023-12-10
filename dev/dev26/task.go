@@ -9,17 +9,10 @@ func isUniqueChars(s string) bool {
 	str := []rune(s)
 	symbols := make(map[rune]bool)
 	for _, val := range str {
-		if unicode.IsUpper(val) {
-			if symbols[val] || symbols[val+32] {
-				return false
-			}
-		} else {
-			if symbols[val] || symbols[val-32] {
-				return false
-			}
+		if symbols[unicode.ToLower(val)] {
+			return false
 		}
-
-		symbols[val] = true
+		symbols[unicode.ToLower(val)] = true
 	}
 	return true
 }
